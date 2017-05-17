@@ -31,5 +31,5 @@ script:
   - $ISLANDORA_DIR/tests/scripts/line_endings.sh sites/all/modules/islandora_solution_pack_document
   - drush coder-review --reviews=production,security,style,i18n,potx,sniffer islandora_document
   - phpcpd --names *.module,*.inc,*.test sites/all/modules/islandora_solution_pack_document
-  - drush test-run --uri=http://localhost:8081 "Islandora Document"
+  - php scripts/run-tests.sh --php `phpenv which php` --url http://localhost:8081 --verbose "Islandora Document"
   - drush wd-show --count=500
